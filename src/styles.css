@@ -79,7 +79,7 @@ a:hover{text-decoration:underline}
   box-shadow:0 1px 6px rgba(0,0,0,.05);
 }
 .nav-inner{
-  display:flex;align-items:center;height:62px;gap:0;
+  display:flex;align-items:center;height:72px;gap:0;
   max-width:1100px;margin:0 auto;
   padding-left:max(16px,env(safe-area-inset-left,0px));
   padding-right:max(16px,env(safe-area-inset-right,0px));
@@ -92,7 +92,7 @@ a:hover{text-decoration:underline}
   font-family:var(--font-d);font-weight:900;font-size:12px;color:#fff;letter-spacing:-.5px;
 }
 .logo-crest{
-  width:34px;height:34px;flex-shrink:0;border-radius:7px;
+  width:56px;height:56px;flex-shrink:0;border-radius:7px;
   object-fit:contain;display:block;
 }
 .logo-text{display:flex;flex-direction:column;gap:1px}
