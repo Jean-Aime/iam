@@ -1,0 +1,19 @@
+{
+  "$schema": "node_modules/wrangler/config-schema.json",
+  "name": "shy-darkness-901b",
+  "account_id": "65c12b8d31fe8a33511cca0c62f532d1",
+  "compatibility_date": "2026-10-28",
+  // Serve the static Vite build; no Worker script needed
+  "assets": {
+    "directory": "./dist",
+    "not_found_handling": "single-page-application"
+  },
+  // The site must be reachable on https://iam.mylonwason.com/ ONLY
+  "workers_dev": false,
+  "routes": [
+    {
+      "pattern": "iam.mylonwason.com",
+      "custom_domain": true
+    }
+  ]
+}
