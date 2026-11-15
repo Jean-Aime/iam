@@ -185,11 +185,11 @@ const DEFAULT_LINKS: Links = {
   'contact-website': { href: 'https://odiecloud.com', text: 'odiecloud.com' },
   'contact-bio': { href: 'https://mylonwason.com/about/', text: 'mylonwason.com/about/' },
   'contact-jitsi': {
-    href: 'https://jitsi.odiecloud.org/imylonwason',
-    text: 'jitsi.odiecloud.org/imylonwason',
+    href: 'https://meet.jit.si/ODIECLOUD-Executive-Conference-20261110',
+    text: 'meet.jit.si/ODIECLOUD-Executive-Conference-20261110',
   },
   'contact-cal': {
-    href: 'https://calcom.odiecloud.org/imylonwason/business-startup?duration=60',
+    href: 'https://cal.com/mylonwason',
     text: 'Book 60-min session →',
   },
   'contact-linkedin': {
@@ -201,7 +201,32 @@ const DEFAULT_LINKS: Links = {
 
 function readSavedLinks(): Partial<Links> {
   try {
-    return JSON.parse(localStorage.getItem(LINKS_KEY) || '{}') as Partial<Links>
+    const saved = JSON.parse(localStorage.getItem(LINKS_KEY) || '{}') as Partial<Links>
+    const previousDefaults: Partial<Record<LinkId, LinkEntry>> = {
+      'contact-bio': { href: 'https://iam.mylonwason.com', text: 'iam.mylonwason.com' },
+      'contact-jitsi': {
+        href: 'https://jitsi.odiecloud.org/imylonwason',
+        text: 'jitsi.odiecloud.org/imylonwason',
+      },
+      'contact-cal': {
+        href: 'https://calcom.odiecloud.org/imylonwason/business-startup?duration=60',
+        text: 'Book 60-min session →',
+      },
+    }
+
+    for (const id of Object.keys(previousDefaults) as LinkId[]) {
+      const previous = previousDefaults[id]
+      const savedLink = saved[id]
+      if (previous && savedLink?.href === previous.href) {
+        saved[id] = {
+          ...savedLink,
+          href: DEFAULT_LINKS[id].href,
+          text: savedLink.text === previous.text ? DEFAULT_LINKS[id].text : savedLink.text,
+        }
+      }
+    }
+
+    return saved
   } catch {
     return {}
   }
@@ -221,7 +246,7 @@ const HERO_TITLES = [
 const STATS = [
   { num: '40+', label: 'Years of enterprise experience' },
   { num: '1988', label: 'Oderson Incorporated established, Barbados' },
-  { num: '7', label: 'ODIECLOUD²π Ecosystem divisions' },
+  { num: '7', label: 'ODIECLOUD²π GeOS – Economic Centers' },
 ]
 
 const PROFILE_ITEMS: { icon: IconName; label: string; value: string }[] = [
@@ -283,7 +308,7 @@ const TIMELINE = [
 
 const GOVERNANCE_CHAIN: { label: string; style: CSSProperties }[] = [
   {
-    label: 'WFSG  Wason Family Sovereign Governance',
+    label: 'Wason Family Sovereign Governance – WFSG',
     style: {
       background: 'rgba(255,255,255,.08)',
       borderRadius: 6,
@@ -321,7 +346,7 @@ const GOVERNANCE_CHAIN: { label: string; style: CSSProperties }[] = [
     },
   },
   {
-    label: 'ODIECLOUD²π GeOS  7 Divisions',
+    label: 'ODIECLOUD²π GeOS – 7 Economic Centers',
     style: {
       background: 'rgba(255,255,255,.05)',
       borderRadius: 6,
@@ -503,8 +528,7 @@ export default function App() {
     <>
       {/* STRIP */}
       <div className="strip">
-        {'ODIECLOUD²π GeOS  Digitizing Global Africa \u00A0·\u00A0'}
-        <span>{'Sovereign Architect: Mylon Oderson Wason \u00A0·\u00A0 Norrsken House, Kigali, Rwanda'}</span>
+        <span>ODIECLOUD²π GeOS – Digitizing Global Africa into a Unified and Investable Marketplace</span>
       </div>
 
       {/* NAV */}
@@ -514,7 +538,7 @@ export default function App() {
             <img className="logo-crest" src={crest} alt="Mylon Oderson WASON" />
             <div className="logo-text">
               <div className="logo-name">Mylon Oderson WASON</div>
-              <div className="logo-tag">Sovereign Architect & Custodian — WFSG</div>
+              <div className="logo-tag">Wason Family Sovereign Governance – WFSG</div>
             </div>
           </a>
           <div className="nav-right">
@@ -537,7 +561,7 @@ export default function App() {
               <h1>
                 Mylon Oderson
                 <br />
-                <em>Wason</em>
+                <em>WASON</em>
               </h1>
               <p className="hero-sub">
                 Barbadian entrepreneur, enterprise architect, and institutional leader. More than
@@ -563,10 +587,10 @@ export default function App() {
               <div className="photo-card">
                 <img
                   src={portrait}
-                  alt="Mylon Oderson Wason — Chairman & CEO, Oderson Holdings Ltd."
+                  alt="Mylon Oderson WASON — Chairman & CEO, Oderson Holdings Ltd."
                 />
                 <div className="photo-name-bar">
-                  <div className="photo-name">Mylon Oderson Wason</div>
+                  <div className="photo-name">Mylon Oderson WASON</div>
                   <div className="photo-tag">Chairman & CEO · Oderson Holdings Ltd.</div>
                 </div>
               </div>
@@ -597,7 +621,7 @@ export default function App() {
               <div className="eyebrow">About Mylon</div>
               <h2>From Barbados to Kigali  a self-built career spanning four decades</h2>
               <p className="lead">
-                Mylon Oderson Wason is a Barbadian-born entrepreneur, international business
+                Mylon Oderson WASON is a Barbadian-born entrepreneur, international business
                 development strategist, enterprise architect, and institutional leader with more
                 than four decades of experience across insurance, financial services, real estate,
                 technology, and international commerce.
@@ -796,7 +820,7 @@ export default function App() {
             ODIECLOUD²π Ecosystem
           </div>
           <h2 className="white" style={{ textAlign: 'center', marginBottom: 10 }}>
-            Seven divisions. One governed economic operating system.
+            Seven economic centers. One governed economic operating system.
           </h2>
           <p className="lead white" style={centerLead}>
             Designed to connect people, businesses, institutions, and capital across Global Africa
@@ -891,7 +915,7 @@ export default function App() {
               </div>
               <div style={{ marginTop: 24, display: 'flex', gap: 10, flexWrap: 'wrap' }}>
                 <a
-                  href="https://calcom.odiecloud.org/imylonwason/business-startup?duration=60"
+                  href="https://cal.com/mylonwason"
                   target="_blank"
                   className="btn btn-primary"
                   style={{ flex: 1, justifyContent: 'center' }}
@@ -900,7 +924,7 @@ export default function App() {
                   Book a Meeting
                 </a>
                 <a
-                  href="https://jitsi.odiecloud.org/imylonwason"
+                  href="https://meet.jit.si/ODIECLOUD-Executive-Conference-20261110"
                   target="_blank"
                   className="btn btn-outline"
                   style={{ flex: 1, justifyContent: 'center' }}
@@ -926,15 +950,6 @@ export default function App() {
                 </div>
               </a>
               <p className="footer-tagline">
-                Mylon Oderson WASON
-                <br />
-                Sovereign Architect &amp; Custodian of WFSG
-                <br />
-                Administrator of ODIECLOUD²π GeOS (Ecosystem)
-                <br />
-                Chairman &amp; CEO, Oderson Holdings Ltd.
-                <br />
-                <br />
                 Connecting Global Africa and the Caribbean to Trade, Business Opportunities, Manufacturing, Tourism, Investment Opportunities &amp; Education and Career Opportunities.
               </p>
             </div>
@@ -959,7 +974,7 @@ export default function App() {
           </div>
           <div className="footer-bottom">
             <div className="footer-legal">
-              <div>© 2026 Mylon Oderson Wason · Oderson Holdings Ltd. · All rights reserved.</div>
+              <div>© 2026 Mylon Oderson WASON · Oderson Holdings Ltd. · All rights reserved.</div>
               <a
                 className="eco-badge"
                 href="https://odiecloud.com/"
