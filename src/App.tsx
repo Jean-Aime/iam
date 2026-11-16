@@ -538,7 +538,7 @@ export default function App() {
       {/* NAV */}
       <nav className="nav">
         <div className="nav-inner">
-          <a href="#" className="nav-logo">
+          <a href="https://mylonwason.com/" className="nav-logo">
             <img className="logo-crest" src={crest} alt="Mylon Oderson WASON" />
             <div className="logo-text">
               <div className="logo-name">Mylon Oderson WASON</div>
@@ -603,7 +603,7 @@ export default function App() {
       </section>
 
       {/* STATS DARK */}
-      <section className="sec sec-dark">
+      <section className="sec sec-dark stats-section">
         <div className="wrap">
           <div className="stat-row">
             {STATS.map((stat) => (

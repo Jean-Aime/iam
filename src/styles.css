@@ -63,6 +63,7 @@ a:hover{text-decoration:underline}
 .sec{padding-block:64px}
 .sec-alt{background:var(--bg-alt)}
 .sec-dark{background:var(--navy)}
+.stats-section{padding-block:16px}
 
 /* Strip */
 .strip{
@@ -290,7 +291,7 @@ blockquote.pull strong{color:var(--fg);font-style:normal}
 
 /* Stat dark */
 .stat-row{display:grid;grid-template-columns:repeat(3,1fr);gap:0}
-.stat-box{text-align:center;padding:14px 16px;border-right:1px solid rgba(255,255,255,.08)}
+.stat-box{text-align:center;padding:8px 16px;border-right:1px solid rgba(255,255,255,.08)}
 .stat-box:last-child{border-right:none}
 .stat-num{font-family:var(--font-d);font-size:clamp(28px,3.5vw,42px);font-weight:900;letter-spacing:-.05em;color:var(--gold);line-height:1;margin-bottom:6px}
 .stat-label{font-size:clamp(10px,1.2vw,13px);color:rgba(255,255,255,.45);line-height:1.5;white-space:nowrap;margin:0 auto}
@@ -344,6 +345,7 @@ blockquote.pull strong{color:var(--fg);font-style:normal}
 }
 @media(max-width:640px){
   .sec{padding-block:48px}
+  .stats-section{padding-block:12px}
   .hero{padding-block:52px 44px}
   .card-grid-3{grid-template-columns:1fr}
   .stat-row{grid-template-columns:1fr}
