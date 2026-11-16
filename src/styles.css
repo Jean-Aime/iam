@@ -70,7 +70,7 @@ a:hover{text-decoration:underline}
   font-family:var(--font-d);font-size:12px;font-weight:600;
   letter-spacing:.04em;text-align:center;padding:8px 24px;
 }
-.strip span{color:var(--gold)}
+.strip span{color:#fff}
 
 /* Nav */
 .nav{
@@ -308,9 +308,9 @@ blockquote.pull strong{color:var(--fg);font-style:normal}
 .footer-inner{display:flex;align-items:flex-start;justify-content:space-between;gap:56px;flex-wrap:wrap;margin-bottom:44px}
 .footer-brand{flex:0 1 440px;min-width:260px;text-align:center}
 .footer-logo{display:flex;flex-direction:column;align-items:center;gap:16px;text-decoration:none;margin-bottom:18px}
-.footer-crest{width:180px;height:auto;display:block}
+.footer-crest{width:320px;max-width:100%;height:auto;display:block}
 .footer-logo .logo-name{font-family:var(--font-d);font-size:17px;font-weight:800;color:#fff;letter-spacing:-.01em}
-.footer-tagline{font-size:15px;color:rgba(255,255,255,.55);line-height:1.7;max-width:440px;margin:0 auto;white-space:normal}
+.footer-tagline{font-size:15px;color:#fff;line-height:1.7;max-width:440px;margin:0 auto;white-space:normal}
 .footer-cols{display:flex;flex-wrap:wrap;gap:56px}
 .footer-links{flex:0 0 auto;text-align:left}
 .footer-links h4{font-family:var(--font-d);font-size:15px;font-weight:800;letter-spacing:.04em;text-transform:uppercase;color:#fff;margin-bottom:20px}

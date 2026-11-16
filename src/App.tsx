@@ -180,7 +180,7 @@ const LINKS_KEY = 'mw_bio_links_v1'
 
 const DEFAULT_LINKS: Links = {
   'contact-email': { href: 'mailto:mylonwason@odiecloud.org', text: 'mylonwason@odiecloud.org' },
-  'contact-whatsapp': { href: 'https://wa.me/16787017785', text: '+1 (678) 701-7785' },
+  'contact-whatsapp': { href: 'https://wa.me/16787017785', text: 'Chat on WhatsApp' },
   'contact-rwanda': { href: 'tel:+250794004336', text: '+250 794 004 336' },
   'contact-website': { href: 'https://odiecloud.com', text: 'odiecloud.com' },
   'contact-bio': { href: 'https://mylonwason.com/about/', text: 'mylonwason.com/about/' },
@@ -203,6 +203,10 @@ function readSavedLinks(): Partial<Links> {
   try {
     const saved = JSON.parse(localStorage.getItem(LINKS_KEY) || '{}') as Partial<Links>
     const previousDefaults: Partial<Record<LinkId, LinkEntry>> = {
+      'contact-whatsapp': {
+        href: 'https://wa.me/16787017785',
+        text: '+1 (678) 701-7785',
+      },
       'contact-bio': { href: 'https://iam.mylonwason.com', text: 'iam.mylonwason.com' },
       'contact-jitsi': {
         href: 'https://jitsi.odiecloud.org/imylonwason',
@@ -943,14 +947,13 @@ export default function App() {
         <div className="wrap">
           <div className="footer-inner">
             <div className="footer-brand">
-              <a href="#" className="footer-logo">
-                <img className="footer-crest" src={crest} alt="Mylon Oderson WASON" />
-                <div className="logo-text">
-                  <div className="logo-name">Mylon Oderson WASON</div>
-                </div>
-              </a>
+              <div className="footer-logo">
+                <img className="footer-crest" src={crest} alt="Wason Family Sovereign Governance crest" />
+              </div>
               <p className="footer-tagline">
-                Connecting Global Africa and the Caribbean to Trade, Business Opportunities, Manufacturing, Tourism, Investment Opportunities &amp; Education and Career Opportunities.
+                Connecting Global Africa and the Caribbean to Trade, Business Opportunities,
+                Manufacturing, Tourism, Investment Opportunities, Technology, Education and Career
+                Opportunities.
               </p>
             </div>
             <div className="footer-cols">
