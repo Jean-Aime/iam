@@ -96,8 +96,7 @@ a:hover{text-decoration:underline}
   object-fit:contain;display:block;
 }
 .logo-text{display:flex;flex-direction:column;gap:1px}
-.logo-name{font-family:var(--font-d);font-size:13px;font-weight:700;color:var(--fg);letter-spacing:-.02em;line-height:1.2}
-.logo-tag{font-size:10px;color:var(--fg-l);font-weight:500}
+.logo-name{font-family:var(--font-d);font-size:18px;font-weight:800;color:var(--fg);letter-spacing:-.02em;line-height:1.2}
 .nav-right{display:flex;align-items:center;gap:10px;margin-left:auto}
 .nav-badge{
   font-family:var(--font-d);font-size:11px;font-weight:700;
@@ -291,7 +290,7 @@ blockquote.pull strong{color:var(--fg);font-style:normal}
 
 /* Stat dark */
 .stat-row{display:grid;grid-template-columns:repeat(3,1fr);gap:0}
-.stat-box{text-align:center;padding:28px 16px;border-right:1px solid rgba(255,255,255,.08)}
+.stat-box{text-align:center;padding:14px 16px;border-right:1px solid rgba(255,255,255,.08)}
 .stat-box:last-child{border-right:none}
 .stat-num{font-family:var(--font-d);font-size:clamp(28px,3.5vw,42px);font-weight:900;letter-spacing:-.05em;color:var(--gold);line-height:1;margin-bottom:6px}
 .stat-label{font-size:clamp(10px,1.2vw,13px);color:rgba(255,255,255,.45);line-height:1.5;white-space:nowrap;margin:0 auto}

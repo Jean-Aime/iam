@@ -274,13 +274,13 @@ const PROFILE_ITEMS: { icon: IconName; label: string; value: string }[] = [
 ]
 
 const ECOSYSTEM_PILLS = [
+  'ODIXA',
   'ODIEBOARD OrgOS',
   'ODIEXA',
-  'ODIXA',
   'AUREX',
-  'AUREON9',
-  'Oπ Intelligence',
   'AAL',
+  'AUREON9',
+  'Oπ INTELLIGENCE',
 ]
 
 const TIMELINE = [
@@ -542,7 +542,6 @@ export default function App() {
             <img className="logo-crest" src={crest} alt="Mylon Oderson WASON" />
             <div className="logo-text">
               <div className="logo-name">Mylon Oderson WASON</div>
-              <div className="logo-tag">Wason Family Sovereign Governance – WFSG</div>
             </div>
           </a>
           <div className="nav-right">
@@ -676,7 +675,7 @@ export default function App() {
       <div className="trust-bar">
         <div className="wrap">
           <div className="trust-inner">
-            <div className="trust-label">Part of the ODIECLOUD²π Ecosystem</div>
+            <div className="trust-label">PART OF THE ODIECLOUD²π GeOS (Ecosystem)</div>
             <div className="pills">
               {ECOSYSTEM_PILLS.map((pill) => (
                 <div className="pill" key={pill}>
