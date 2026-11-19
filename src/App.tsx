@@ -2,7 +2,6 @@ import { Fragment, useState } from 'react'
 import type { CSSProperties, MouseEvent, ReactNode } from 'react'
 import portrait from './assets/portrait.png'
 import crest from './assets/sovereign-crest.png'
-import odieboardBadge from './assets/odieboard-badge.png'
 
 /* ------------------------------------------------------------------ *
  * Icons — line-art SVGs used everywhere an emoji used to be
@@ -976,17 +975,7 @@ export default function App() {
           </div>
           <div className="footer-bottom">
             <div className="footer-legal">
-              <div>© 2026 Mylon Oderson WASON · Oderson Holdings Ltd. · All rights reserved.</div>
-              <a
-                className="eco-badge"
-                href="https://odiecloud.com/"
-                target="_blank"
-              >
-                ODIECLOUD²π GeOS
-              </a>
-            </div>
-            <div className="footer-actions">
-              <img className="footer-badge" src={odieboardBadge} alt="Powered by ODIEBOARD" />
+              <div>© Copyright 2026 Mylon Oderson Wason. All rights reserved.</div>
             </div>
           </div>
         </div>
