@@ -246,6 +246,27 @@ const HERO_TITLES = [
   'Karate Instructor · 6th Degree Black Belt (6th Dan)',
 ]
 
+const DIGITAL_PLATFORMS = [
+  {
+    name: 'iam.mylonwason.com',
+    href: 'https://iam.mylonwason.com',
+    purpose: 'Digital Business Card',
+    description: 'Primary networking and digital business card.',
+  },
+  {
+    name: 'mylonwason.com',
+    href: 'https://mylonwason.com',
+    purpose: 'Sovereign Architect & Custodian',
+    description: 'Executive identity, institutional leadership, and WFSG.',
+  },
+  {
+    name: 'imylonwason.com',
+    href: 'https://imylonwason.com',
+    purpose: 'The UnWilling Affiliate',
+    description: 'Discover Channel Partner opportunities through An Affiliate Life (AAL).',
+  },
+]
+
 const STATS = [
   { num: '40+', label: 'Years of enterprise experience' },
   { num: '1988', label: 'Oderson Incorporated established, Barbados' },
@@ -426,6 +447,7 @@ const MEETING_ROWS: ContactRowDef[] = [
 
 const FOOTER_SECTIONS = [
   { href: '#about', label: 'Biography' },
+  { href: '#platforms', label: 'Digital Platforms' },
   { href: '#journey', label: 'Career Journey' },
   { href: '#disciplines', label: 'Disciplines' },
   { href: '#ecosystem', label: 'ODIECLOUD²π' },
@@ -435,6 +457,8 @@ const FOOTER_SECTIONS = [
 const FOOTER_EXTERNAL = [
   { href: 'https://odiecloud.com', label: 'odiecloud.com' },
   { href: 'https://iam.mylonwason.com', label: 'iam.mylonwason.com' },
+  { href: 'https://mylonwason.com', label: 'mylonwason.com' },
+  { href: 'https://imylonwason.com', label: 'imylonwason.com' },
   { href: 'https://www.linkedin.com/in/imylonwason/', label: 'LinkedIn' },
   { href: 'https://web.facebook.com/mylonwason', label: 'Facebook' },
 ]
@@ -569,6 +593,19 @@ export default function App() {
                 Barbadian entrepreneur, enterprise architect, and institutional leader. More than
                 four decades of business development across three continents.
               </p>
+              <p
+                style={{
+                  marginTop: 12,
+                  marginBottom: 4,
+                  color: '#fff',
+                  fontFamily: 'var(--font-d)',
+                  fontSize: '14.5px',
+                  fontWeight: 700,
+                  lineHeight: 1.55,
+                }}
+              >
+                Connecting Global Africa, the Caribbean, and the Global Diaspora to Opportunities.
+              </p>
               <div className="hero-titles">
                 {HERO_TITLES.map((title) => (
                   <div className="hero-title-item" key={title}>
@@ -628,6 +665,29 @@ export default function App() {
                 than four decades of experience across insurance, financial services, real estate,
                 technology, and international commerce.
               </p>
+              <p
+                style={{
+                  marginTop: 18,
+                  fontSize: '14px',
+                  color: 'var(--fg-m)',
+                  lineHeight: 1.72,
+                }}
+              >
+                Through the ODIECLOUD²π Ecosystem, he is building bridges between people,
+                businesses, institutions, and markets through Trade, Manufacturing, Technology,
+                Tourism, Investment, Education, Entrepreneurship, and Career Opportunities.
+              </p>
+              <p
+                style={{
+                  marginTop: 10,
+                  fontSize: '14px',
+                  color: 'var(--fg-m)',
+                  lineHeight: 1.72,
+                }}
+              >
+                His mission is to digitize Global Africa into a unified, governed, and investable
+                marketplace through the ODIECLOUD²π Ecosystem.
+              </p>
               <blockquote className="pull">
                 <strong>
                   "I became everything I needed to become because someone else needed my help
@@ -685,6 +745,49 @@ export default function App() {
           </div>
         </div>
       </div>
+
+      {/* DIGITAL PLATFORMS */}
+      <section className="sec" id="platforms">
+        <div className="wrap">
+          <div className="eyebrow" style={{ textAlign: 'center' }}>
+            My Digital Platforms
+          </div>
+          <h2 style={{ textAlign: 'center', marginBottom: 10 }}>
+            Connect, lead, and discover opportunities
+          </h2>
+          <p className="lead" style={centerLead}>
+            Three connected digital identities, each designed for a distinct purpose.
+          </p>
+          <div className="card-grid-3">
+            {DIGITAL_PLATFORMS.map((platform) => (
+              <a
+                href={platform.href}
+                target="_blank"
+                rel="noreferrer"
+                className="card blue-top"
+                key={platform.href}
+                style={{ color: 'inherit', textDecoration: 'none' }}
+              >
+                <div className="eyebrow" style={{ marginBottom: 8 }}>
+                  {platform.purpose}
+                </div>
+                <h3>{platform.name}</h3>
+                <p>{platform.description}</p>
+              </a>
+            ))}
+          </div>
+          <p
+            style={{
+              marginTop: 20,
+              textAlign: 'center',
+              color: 'var(--fg-m)',
+              fontSize: '14px',
+            }}
+          >
+            <strong>Connect • Collaborate • Trade • Invest • Grow</strong>
+          </p>
+        </div>
+      </section>
 
       {/* JOURNEY TIMELINE */}
       <section className="sec sec-alt" id="journey">
@@ -949,9 +1052,17 @@ export default function App() {
                 <img className="footer-crest" src={crest} alt="Wason Family Sovereign Governance crest" />
               </div>
               <p className="footer-tagline">
-                Connecting Global Africa and the Caribbean to Trade, Business Opportunities,
-                Manufacturing, Tourism, Investment Opportunities, Technology, Education and Career
-                Opportunities.
+                Connecting Global Africa, the Caribbean, and the Global Diaspora to Opportunities.
+                Building bridges between people, businesses, institutions, and markets through Trade,
+                Manufacturing, Technology, Tourism, Investment, Education, Entrepreneurship, and
+                Career Opportunities.
+              </p>
+              <p className="footer-tagline" style={{ marginTop: 12 }}>
+                Our mission is to digitize Global Africa into a unified, governed, and investable
+                marketplace through the ODIECLOUD²π Ecosystem.
+              </p>
+              <p className="footer-tagline" style={{ marginTop: 12, fontWeight: 700 }}>
+                Connect • Collaborate • Trade • Invest • Grow
               </p>
             </div>
             <div className="footer-cols">
